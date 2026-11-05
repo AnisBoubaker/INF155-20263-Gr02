@@ -38,3 +38,26 @@ void tri_selection(int tab[], int taille) {
         }
     }
 }
+
+void tri_bulles(int tab[], int taille) {
+    int limite = taille;
+    int permutation = 1;
+    while (limite>1 && permutation) {
+        permutation = 0;
+        for (int i=0; i<limite-1; i++) {
+            if (tab[i]>tab[i+1]) {
+                int tmp = tab[i];
+                tab[i] = tab[i+1];
+                tab[i+1] = tmp;
+                permutation = 1;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
