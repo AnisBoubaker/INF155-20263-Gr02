@@ -9,5 +9,6 @@
 
 void afficher_tableau(int tab[], int taille);
 void tri_insertion(int tab[], int taille);
+void tri_selection(int tab[], int taille);
 
 #endif //ALGORITHMESSURTABLEAUX_TRI_H
