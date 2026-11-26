@@ -3,17 +3,8 @@
 #include <string.h>
 
 #include "animal.h"
+#include "refuge.h"
 
-
-
-typedef struct refuge {
-    //Option 1
-    //Animal* animaux; //Tableau dynamique de Animals
-    //Option 2:
-    Animal **animaux;     //Tableau dynamique de pointeurs vers des Animal_s
-    int nbre_animaux; //Taille effective du tableau animaux
-    int capacite; //Taille maximale *actuelle* du tableau d'animaux
-} Refuge;
 
 int main(void) {
 
@@ -25,9 +16,17 @@ int main(void) {
     a1->poids = 25;
     a1->est_disponible = 1;
 
-    animal_afficher(a1);
+    //animal_afficher(a1);
 
-    animal_liberer(a1);
+    Refuge *mon_refuge = refuge_creer(5);
+
+    mon_refuge->animaux[ mon_refuge->nbre_animaux ] = a1;
+    mon_refuge->nbre_animaux++;
+    // refuge_ajouter(mon_refuge, a1);
+
+    refuge_afficher(mon_refuge);
+
+    //animal_liberer(a1);
 
     return 0;
 }
